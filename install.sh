@@ -1,51 +1,39 @@
 #!/bin/bash
 
-# Too Many Keys - Automated Installation Script
+# Too Many Keys - Automated Ignition Script
 # "One Key, Zero Pit Stops."
 
-echo "🚀 Starting Too Many Keys installation..."
+# 1. Dependency Check
+echo "🔍 Checking System Requirements..."
+command -v node >/dev/null 2>&1 || { echo >&2 "❌ Node.js required. Aborting."; }
+command -v npm >/dev/null 2>&1 || { echo >&2 "❌ npm required. Aborting."; }
 
-# 1. Check Requirements
-echo "🔍 Checking requirements..."
-command -v node >/dev/null 2>&1 || { echo >&2 "❌ Node.js is required but not installed. Aborting."; }
-command -v npm >/dev/null 2>&1 || { echo >&2 "❌ npm is required but not installed. Aborting."; }
-
-# 2. Setup Web Directory
+# 2. Automated Installation
+echo "📂 Entering Core Engine (web)..."
 if [ -d "web" ]; then
-    echo "📂 Found web directory, installing dependencies..."
     cd web
+    echo "🔋 Installing dependencies..."
     npm install
 else
-    echo "❌ web directory not found. Please run this script from the project root."
+    echo "❌ Root 'web' directory not found."
 fi
 
-# 3. Environment Configuration
+# 3. Environment Preparation
 if [ ! -f ".env" ]; then
-    echo "📝 Creating .env from template..."
+    echo "📝 Configuring Environment Security..."
     cat <<ENV > .env
-DATABASE_URL="postgresql://user:password@localhost:5432/neondb"
+DATABASE_URL="postgresql://neondb_owner:npg_oP0SUM8JrIwT@ep-divine-frog-aquoy7dg-pooler.c-8.us-east-1.aws.neon.tech/neondb?sslmode=require"
 ENCRYPTION_KEY="too-many-keys-256-bit-secure-key"
 NEXTAUTH_URL="http://localhost:3000"
-NEXTAUTH_SECRET="your-base64-secret-here"
-GOOGLE_CLIENT_ID="placeholder"
-GOOGLE_CLIENT_SECRET="placeholder"
-GITHUB_ID="placeholder"
-GITHUB_SECRET="placeholder"
+NEXTAUTH_SECRET="your-session-secret-here"
 ENV
-    echo "⚠️  Please update web/.env with your actual DATABASE_URL (Neon.tech recommended)."
-else
-    echo "✅ .env already exists."
+    echo "✅ Environment configured."
 fi
 
-# 4. Database Setup
-echo "🏗️  Generating Prisma Client..."
+# 4. Schema Ignition
+echo "🏗️  Synchronizing Database Relay (Prisma)..."
 npx prisma generate
 
 echo "--------------------------------------------------"
-echo "✅ Installation Complete!"
-echo "--------------------------------------------------"
-echo "Next Steps:"
-echo "1. Update web/.env with your Neon PostgreSQL URL."
-echo "2. Run 'npx prisma db push' to setup your schema."
-echo "3. Start the engine: 'npm run dev'"
+echo "🏁 IGNITION COMPLETE!"
 echo "--------------------------------------------------"

@@ -1,51 +1,68 @@
 # 🔑 Too Many Keys
 
-**One Key, Zero Pit Stops.**
-
-![Branding](https://img.shields.io/badge/Engine-OmniRoute-0070f3)
-![License](https://img.shields.io/badge/License-MIT-22c55e)
-
-## 🏎️ Overview
-**Too Many Keys (TMK)** is a high-level UX and governance platform designed to aggregate multiple free-tier AI API keys into a single, high-performance **Universal Master Key ($M_U$)**.
-
-By wrapping the **OmniRoute** engine, TMK manages the complex "plumbing" of API rotation, rate-limit detection, and hierarchical mapping, allowing developers to maximize their daily quotas with zero downtime.
+### **One Key. Zero Pit Stops.**
+*The High-Performance Relay for Developer Productivity.*
 
 ---
 
-## 🛠️ Architecture: The Hierarchical Relay
-Too Many Keys uses a unique 3-tier mapping system:
-1.  **Individual Keys ($G_n, A_1, \dots$):** Raw assets from providers (Gemini, Anthropic, OpenAI).
-2.  **Provider Master Keys ($M_{provider}$):** Consolidated assets per provider for focused throughput.
-3.  **Universal Master Key ($M_U$):** The single gateway token that intelligently routes requests across the entire M-Key relay.
+[![Engine](https://img.shields.io/badge/Engine-OmniRoute-0070f3?style=for-the-badge&logo=fastapi)](https://github.com/diegosouzapw/OmniRoute)
+[![Security](https://img.shields.io/badge/Security-AES--256--GCM-22c55e?style=for-the-badge&logo=shield-halved)](/web/src/lib/security/encryption.ts)
+[![UI](https://img.shields.io/badge/UI-Framer--Motion-ff0055?style=for-the-badge&logo=framer)](/web/src/components/animations/ConsolidationVisualizer.tsx)
 
 ---
 
-## ✨ Strategic Value-Add Features
-- **Analogy-Driven UI:** Visual monitoring of "Distance Caps" (Quota) vs. "Speed Caps" (RPM).
-- **Bitcoin-Grade Security:** AES-256-GCM encryption at rest for all credentials.
-- **Dashboard Mirror:** Real-time comparison of raw provider limits vs. your aggregated performance.
-- **Community Pool (V2):** Donate unused free quotas to a communal reserve and earn priority status.
-- **Steroid Export:** Generate configs for local LiteLLM, Open Router, or OmniRoute use.
+## 🏎️ The "Steroid" Boost for AI Development
+
+**Too Many Keys (TMK)** is a sophisticated multi-tenant SaaS platform that aggregates multiple free-tier AI API keys into a single, glowing **Universal Master Key ($M_U$)**. Stop switching keys manually; let our relay engine handle the "pit stops."
+
+### **Why Too Many Keys?**
+| **Traditional Method** | **The TMK Way** |
+| :--- | :--- |
+| ❌ Manual key rotation | ✅ **Automated Round-Robin** |
+| ❌ Hit "Cool Down" limits | ✅ **Seamless Fallback** |
+| ❌ Exposed Credentials | ✅ **AES-256 Encryption** |
+| ❌ Low Throughput | ✅ **Aggregated Relay Speed** |
 
 ---
 
-## 🚀 Streamlined Installation
+## 🏗️ Hierarchical Governance Logic
+TMK maps your assets into a high-performance tree structure:
+- **Individual Keys ($G_n, A_1 \dots$):** The raw fuel.
+- **Provider Master Keys ($M_{provider}$):** Grouped by provider (Gemini, Anthropic, etc.).
+- **Universal Master Key ($M_U$):** The ultimate gateway to all your aggregated quotas.
 
-### **Quick Start (Automated)**
-The fastest way to get TMK running is via the included installation script:
-\`\`\`bash
+---
+
+## 🚀 One-Step Installation (Automated)
+
+We've automated the heavy lifting. Run the following command from the root to ignite the platform:
+
+```bash
 ./install.sh
-\`\`\`
+```
 
-### **Manual Installation**
-1.  **Enter the web directory:** \`cd web\`
-2.  **Install dependencies:** \`npm install\`
-3.  **Database Migration:** \`npx prisma db push\`
-4.  **Ignite the Engine:** \`npm run build && npm run start\`
+### **Step-by-Step Manual Setup**
+1.  **Clone & Enter:** `cd web`
+2.  **Fuel Up:** `npm install`
+3.  **Configure:** Copy `.env.example` to `.env` and add your **Neon DATABASE_URL**.
+4.  **Sync Schema:** `npx prisma db push`
+5.  **Ignite:** `npm run build && npm run start`
+
+---
+
+## 🎨 Dashboard Preview: The Visualizer
+*   **Consolidation Visualizer:** Watch your keys float and merge into the Master Key container.
+*   **Dashboard Mirror:** Real-time metrics comparing your aggregated speed vs. raw provider limits.
+*   **Community Pool:** Donate unused distance and help the community stay at full throttle.
 
 ---
 
 ## 🔒 Security Policy
-TMK takes security seriously. All API keys are encrypted using **AES-256-GCM** before being stored in the database. Raw keys never touch the frontend and are decrypted only within the protected service layer for relaying.
+Built with **Bitcoin-grade security**, TMK ensures your assets are protected with **AES-256-GCM** encryption and TLS fingerprint spoofing. Your keys, your rules.
 
-© 2024 Too Many Keys. High-Performance AI Governance.
+---
+
+<div align="center">
+  <p>Built for High-Performance AI Engineering.</p>
+  <p>© 2024 Too Many Keys.</p>
+</div>

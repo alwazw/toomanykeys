@@ -1,0 +1,12 @@
+node_modules/
+.next/
+dist/
+build/
+.env
+*.log
+*.png
+web/node_modules/
+web/.next/
+web/dist/
+web/build/
+web/.env

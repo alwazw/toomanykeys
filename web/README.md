@@ -1,24 +1,14 @@
-# Too Many Keys
+# Too Many Keys - Frontend/Backend
 
-One Key, Zero Pit Stops.
+This directory contains the Next.js application for the Too Many Keys platform.
 
-## Overview
-Too Many Keys is a high-level UX and governance platform that aggregates multiple free-tier AI API keys to bypass rate limits and maximize daily quotas. It acts as a sophisticated wrapper around the OmniRoute orchestration engine.
+## Configuration
+Ensure you have a .env file with the following variables:
+- DATABASE_URL: Your PostgreSQL connection string.
+- ENCRYPTION_KEY: A 32-character key for AES-256 encryption.
+- NEXTAUTH_SECRET: Secret for session security.
 
-## Key Features
-- **Hierarchical Key Mapping:**  \rightarrow M_{provider} \rightarrow M_U$.
-- **Bitcoin-Grade Security:** AES-256-GCM encryption for all stored credentials.
-- **Smart Round-Robin:** Automatic rotation upon rate limit detection.
-- **Community Pool:** Donate unused free quota to a communal reserve.
-- **"Steroid" Export:** Generate configs for LiteLLM, Open Router, and OmniRoute.
-
-## Tech Stack
-- **Frontend:** Next.js, Tailwind CSS, Framer Motion.
-- **Backend:** Prisma (PostgreSQL), NextAuth.js.
-- **Infrastructure:** Neon.tech.
-
-## Getting Started
-1. Install dependencies in the `web` directory: `npm install`.
-2. Set up your `.env` file with `DATABASE_URL` and `ENCRYPTION_KEY`.
-3. Push the schema: `npx prisma db push`.
-4. Start the dev server: `npm run dev`.
+## Commands
+- npm run build: Create production build.
+- npm run start: Start production server.
+- npx prisma db push: Sync schema with database.
